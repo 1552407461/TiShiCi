@@ -18,5 +18,106 @@
     "createdAt": "2026-10-10",
     "imageMode": "edit",
     "imageModel": "gpt-image-2"
+  },
+  {
+    "id": "tishici:8ebdd562091cc973",
+    "sourceId": "tishici",
+    "title": "去 AI 味",
+    "prompt": "remove slop",
+    "description": "去除 AI 生成感（去 AI 味），让画面更自然、更少模型痕迹。",
+    "coverUrl": "",
+    "referenceImageUrls": [],
+    "tags": [
+      "去ai味",
+      "质感",
+      "edit"
+    ],
+    "author": "",
+    "sourceUrl": "https://github.com/1552407461/TiShiCi",
+    "createdAt": "2026-10-10",
+    "imageMode": "edit",
+    "imageModel": "gpt-image-2"
+  },
+  {
+    "id": "tishici:f89f613eb0e74daf",
+    "sourceId": "tishici",
+    "title": "图片变直播",
+    "prompt": "Create a TikTok Live screen showing the woman in the image livestreaming with the phone in her hand.",
+    "description": "把图片里的女性转成 TikTok 直播画面，手持手机出镜。",
+    "coverUrl": "",
+    "referenceImageUrls": [],
+    "tags": [
+      "直播",
+      "TikTok",
+      "转场景",
+      "edit"
+    ],
+    "author": "",
+    "sourceUrl": "https://github.com/1552407461/TiShiCi",
+    "createdAt": "2026-10-10",
+    "imageMode": "edit",
+    "imageModel": "gpt-image-2"
+  },
+  {
+    "id": "tishici:f4706d65e74fd42c",
+    "sourceId": "tishici",
+    "title": "16帧分割图 · 变身场景连续原画",
+    "prompt": "高品质日本制2D游戏动漫风格的“变身场景连续原画”一张。横向4列×纵向4行，共16格，精确等分，可从左上至右下按时间顺序阅读。非16张无关姿势的集合，而是同一位成年女性连续动作变身。\n\n主角是一位24岁的可爱成年女性。她有着香槟色的短不对称波波头，戴着黑色蝴蝶结发箍，一双大大的紫色眼睛，鼻梁和嘴唇精致，面容高雅且俏皮，身材健康且富有女性魅力。全幅画面中，通过脸部特征、头身比和体型保持同一人物，优先将脸部和眼睛描绘得清晰而美丽。采用正面固定镜头，从头到靴子展示全身。背景为全幅画面统一的淡蓝灰色工作室。仅用细线分隔，不添加文字。\n\n【1～3格·变身前】白色紧身连衣裙，带有银色刺绣和荷叶边，白色独立袖，黑色图案高筒袜，黑色扣靴。金发女子双脚踏地，低头握拳。紫色火花渐渐增多，头发和裙摆随风飘起。\n\n【4～6格·振奋精神】弯曲膝盖用力蹬地，肩膀和手臂蓄力，抬头。黑紫色和品红色的气场从下方猛烈喷涌而出，闪电、黑色结晶、地面的光圈增多。气场的力量让头发和裙子大幅飞扬。每一格都逐渐加强力度，避免重复相同的特效。\n\n【7～10格·漫长的变身高潮】紧咬牙关后甩头大喊。连续4格画面中，气场愈发巨大，品红色的闪电与黑紫色的火焰接连肆虐。白色服装的缝线发光裂开，白色布片与蕾丝分阶段向四面飞散，第10格时最大闪光与冲击波爆发。连续描绘魔法黑衣与白衣交替的瞬间。爆炸过程中也要能看清脸部与全身轮廓。\n\n【11-12格·觉醒的余韵】银白的头发、红紫相间的瞳孔、小小的黑色角、蝙蝠般的小翅膀、纤细的恶魔尾巴显现。黑紫的火焰与光轮仍在剧烈旋转，双脚开始离地。表情从尖叫转为平静的惊愕，再变为从容的微笑。\n\n【13～16格·漂浮着可爱地摆姿势】变身后的姿态完全统一。双脚明确地离地，脚下画出漂浮的阴影。第13格双臂柔软地张开，面带微笑。第14格单膝可爱地弯曲，一只手托着脸颊。第15格轻轻眨眼，用指尖做出小爱心。第16格双臂张开，朝着相机调皮地微笑。全格画面中角色都漂浮在空中，头发、翅膀、尾巴、裙子缓缓摇曳，气场环绕四周。各个姿势自然衔接，人物大小和脸部表情不变。\n\n【变身后的服装】与变身前一眼就能看出的不同，是黑色和深紫红色的魔鬼风游戏服装。肩部和腰部若隐若现，带有深领口和黑色肩带的抹胸。露出腹部，侧边有深开衩的短不对称黑色荷叶边裙。裙内是不透明的黑色舞蹈短裤。黑色过膝袜，黑色靴子，纤细的独立袖子。兼具成熟女性的魅力和可爱，11至16格中服装的形状和颜色没有变化。\n\n画风采用最高品质的日本制2D游戏插画。细腻清晰的脸部、左右眼睛的对称性、正确的人体手指、锐利的线条、高雅的上色。大幅描绘每一格的人物，优先考虑脸部的细节与一致性。禁止手脚增生、脸部变形、脚尖裁切、格子缺失、增加人物、文字、数字、logo、水印以及模仿现有作品的角色。",
+    "description": "16 帧分割图：日本制 2D 游戏动漫风格的变身场景连续原画，4×4 等分，同一位成年女性从头到靴子的连续变身过程。",
+    "coverUrl": "",
+    "referenceImageUrls": [],
+    "tags": [
+      "16帧分割图",
+      "变身",
+      "连续原画",
+      "日系2D",
+      "generate"
+    ],
+    "author": "",
+    "sourceUrl": "https://github.com/1552407461/TiShiCi",
+    "createdAt": "2026-10-10",
+    "imageMode": "generate",
+    "imageModel": "gpt-image-2"
+  },
+  {
+    "id": "tishici:57be6d620f0c645d",
+    "sourceId": "tishici",
+    "title": "大nai（身材强调）",
+    "prompt": "She has a stunning hourglass figure — full bust with visible cleavage , a slim cinched waist, and curvy hips",
+    "description": "强调女性身材曲线：丰满上身、纤细腰肢、曲线臀部。",
+    "coverUrl": "",
+    "referenceImageUrls": [],
+    "tags": [
+      "身材",
+      "曲线",
+      "edit"
+    ],
+    "author": "",
+    "sourceUrl": "https://github.com/1552407461/TiShiCi",
+    "createdAt": "2026-10-10",
+    "imageMode": "edit",
+    "imageModel": "gpt-image-2"
+  },
+  {
+    "id": "tishici:ae1b54e0c875c672",
+    "sourceId": "tishici",
+    "title": "四个迷你3D丘比小人（封面）",
+    "prompt": "四个风格独特的迷你3D丘比风格小人，它们是同一个女人的精确迷你复制品，但摆出了俏皮、顽皮的姿势，被放置在她的周围，有的放在架子上，有的放在书上，有的则混杂在巨大的文具中。整个画面散发出柔和、梦幻而温暖的光芒，周围的柔和色调与自然的木质和奶油色的背景形成了对比。这张照片是用佳能EOS R5相机拍摄的，使用了35mm f/1.4镜头，保留了自然颗粒感，并采用了电影级的照明。\n\n画面比例：4:5\n风格：写实照片、抓拍、温暖、梦幻\n照明：柔和的午后阳光、漫射光",
+    "description": "四个迷你 3D 丘比风格小人环绕主角摆姿势，写实照片质感，佳能 EOS R5 + 35mm f/1.4，柔和午后光。适合做封面。",
+    "coverUrl": "",
+    "referenceImageUrls": [],
+    "tags": [
+      "迷你小人",
+      "丘比",
+      "封面",
+      "4:5",
+      "写实照片",
+      "generate"
+    ],
+    "author": "",
+    "sourceUrl": "https://github.com/1552407461/TiShiCi",
+    "createdAt": "2026-10-10",
+    "imageMode": "generate",
+    "imageModel": "gpt-image-2"
   }
 ]
