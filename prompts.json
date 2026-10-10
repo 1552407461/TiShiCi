@@ -1,0 +1,22 @@
+[
+  {
+    "id": "tishici:7c1f4a9e2b8d6035",
+    "sourceId": "tishici",
+    "title": "高清放大 · 去噪保原风格",
+    "prompt": "Upscale this low-resolution image. Do not introduce any new artifacts. Preserve the original art style, color treatment and composition exactly, while thoroughly removing noise and making the image clear.",
+    "description": "低分辨率图片高清放大：严格保持原始画风、色彩与构图，彻底去噪并提升清晰度，不引入新的人为痕迹。",
+    "coverUrl": "",
+    "referenceImageUrls": [],
+    "tags": [
+      "放大",
+      "去噪",
+      "修复",
+      "edit"
+    ],
+    "author": "",
+    "sourceUrl": "https://github.com/1552407461/TiShiCi",
+    "createdAt": "2026-10-10",
+    "imageMode": "edit",
+    "imageModel": "gpt-image-2"
+  }
+]
