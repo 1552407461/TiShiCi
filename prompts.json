@@ -141,5 +141,22 @@
     "createdAt": "2026-10-10",
     "imageMode": "generate",
     "imageModel": "gpt-image-2"
+  },
+  {
+    "id": "tishici:6bdd1c46800df2f8",
+    "sourceId": "tishici",
+    "title": "回归测试条目",
+    "prompt": "regression test — safe to delete",
+    "description": "自动化回归测试",
+    "coverUrl": "",
+    "referenceImageUrls": [],
+    "tags": [
+      "测试"
+    ],
+    "author": "",
+    "sourceUrl": "https://github.com/1552407461/TiShiCi",
+    "createdAt": "2026-10-10",
+    "imageMode": "edit",
+    "imageModel": "gpt-image-2"
   }
 ]
