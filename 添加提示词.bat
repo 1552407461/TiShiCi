@@ -1,24 +1,22 @@
-﻿@echo off
+@echo off
 chcp 65001 >nul
-title 提示词上传器
+title Prompt Uploader
 cd /d "%~dp0"
 
 where node >nul 2>nul
 if errorlevel 1 (
   echo.
-  echo   [错误] 找不到 node.exe
-  echo.
-  echo   请确认 Node.js 已安装并加入 PATH。
-  echo   下载: https://nodejs.org/
+  echo   [ERROR] node.exe not found in PATH
+  echo   Please install Node.js: https://nodejs.org/
   echo.
   pause
   exit /b 1
 )
 
-powershell -NoProfile -ExecutionPolicy Bypass -STA -File "%~dp0上传提示词.ps1"
+powershell -NoProfile -ExecutionPolicy Bypass -STA -File "%~dp0prompt-uploader.ps1"
 
 if errorlevel 1 (
   echo.
-  echo   界面异常退出。按任意键关闭窗口。
+  echo   The window exited unexpectedly. Press any key to close.
   pause >nul
 )
