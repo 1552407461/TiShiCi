@@ -35,6 +35,32 @@ const FILE = join(DIR, "prompts.json");
 const SOURCE_ID = "tishici";
 const SOURCE_URL = "https://github.com/1552407461/TiShiCi";
 const RAW_URL = "https://raw.githubusercontent.com/1552407461/TiShiCi/main/prompts.json";
+const API_URL = "https://api.github.com/repos/1552407461/TiShiCi/contents/prompts.json";
+
+/**
+ * 取 GitHub token —— 只用于「验证」这一步的 API 查询（读仓库真实内容）。
+ *
+ * 本文件是公开仓库的一部分，所以 token 绝不写进代码。来源顺序：
+ *   1. 环境变量 GITHUB_TOKEN / GH_TOKEN
+ *   2. git 凭据管理器（`git credential fill`，即 git push 用的那份）
+ * 取不到就跳过 API 验证，只做 raw URL 检查 —— 不影响推送。
+ */
+function githubToken() {
+  const fromEnv = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
+  if (fromEnv) return fromEnv.trim();
+  try {
+    const r = spawnSync("git", ["credential", "fill"], {
+      cwd: DIR,
+      input: "protocol=https\nhost=github.com\n\n",
+      encoding: "utf8",
+    });
+    const m = /^password=(.+)$/m.exec(r.stdout ?? "");
+    return m ? m[1].trim() : "";
+  } catch {
+    return "";
+  }
+}
+const GH_TOKEN = githubToken();
 
 const REQUIRED_KEYS = [
   "id", "sourceId", "title", "prompt", "description", "coverUrl",
@@ -252,23 +278,70 @@ async function cmdDelete(args) {
   if (!args["no-verify"]) await cmdVerify();
 }
 
+/** 逐条比对两组记录，返回不一致的条数 */
+function diffRecords(a, b) {
+  let bad = 0;
+  for (let i = 0; i < Math.max(a.length, b.length); i++) {
+    if (!a[i] || !b[i] || a[i].id !== b[i].id || a[i].prompt !== b[i].prompt) bad++;
+  }
+  return bad;
+}
+
+/**
+ * 验证推送结果。
+ *
+ * 分两步，因为这两者会短暂不一致：
+ *  1. GitHub API —— 仓库的真实内容（权威，无缓存）
+ *  2. raw URL   —— 画布实际拉取的地址，走 CDN，可能有几分钟滞后
+ *
+ * 所以「API 一致」= 推送成功；「raw 滞后」只提示、不算失败。
+ */
 async function cmdVerify() {
-  say("\n→ 验证 raw URL（画布实际拉取的地址）…");
+  const local = loadPrompts();
+  say("\n→ 验证推送结果…");
+
+  // ① 权威检查：GitHub API
+  let apiOk = false;
+  try {
+    const res = await fetch(API_URL, {
+      headers: { authorization: `Bearer ${GH_TOKEN}`, accept: "application/vnd.github+json" },
+    });
+    if (!res.ok) {
+      say(C.warn(`   ⚠️ API 检查跳过（HTTP ${res.status}）${res.status === 401 ? " —— token 可能已失效" : ""}`));
+    } else {
+      const meta = await res.json();
+      const remote = JSON.parse(Buffer.from(meta.content, "base64").toString("utf8"));
+      const bad = diffRecords(remote, local);
+      if (bad) {
+        say(C.bad(`   ❌ 仓库内容与本地不一致（${bad} 条）—— 推送可能未生效`));
+      } else {
+        apiOk = true;
+        say(C.ok(`   ✅ 仓库内容已更新：${remote.length} 条，与本地逐条一致（id + 正文）`));
+      }
+    }
+  } catch (e) {
+    say(C.warn(`   ⚠️ API 检查失败: ${e.message}`));
+  }
+
+  // ② 画布视角：raw URL（走 CDN，可能滞后）
   try {
     const res = await fetch(RAW_URL, { headers: { "cache-control": "no-cache" } });
-    if (!res.ok) return say(C.bad(`❌ HTTP ${res.status}`));
-    const text = await res.text();
-    const remote = JSON.parse(text);
-    const local = loadPrompts();
-    say(`   HTTP 200   远程 ${remote.length} 条 / 本地 ${local.length} 条`);
-    let bad = 0;
-    for (let i = 0; i < Math.max(remote.length, local.length); i++) {
-      if (!remote[i] || !local[i] || remote[i].id !== local[i].id || remote[i].prompt !== local[i].prompt) bad++;
+    if (!res.ok) {
+      say(C.warn(`   ⚠️ raw URL HTTP ${res.status}`));
+    } else {
+      const remote = JSON.parse(await res.text());
+      const bad = diffRecords(remote, local);
+      if (!bad) {
+        say(C.ok(`   ✅ raw URL 已同步：${remote.length} 条（画布现在就能拉到最新）`));
+      } else if (apiOk) {
+        say(C.warn(`   ⏳ raw URL 仍返回 ${remote.length} 条（CDN 缓存滞后，通常几分钟内自动更新）`));
+        say(C.dim("      画布刷新若仍是旧内容，稍等片刻再刷新即可，不是推送失败"));
+      } else {
+        say(C.bad(`   ❌ raw URL 与本地不一致（${bad} 条）`));
+      }
     }
-    if (bad) say(C.bad(`   ❌ ${bad} 条不一致（GitHub 可能有 CDN 缓存，稍等再试）`));
-    else say(C.ok("   ✅ 远程与本地逐条一致（id + 正文）"));
   } catch (e) {
-    say(C.warn(`   ⚠️ 验证失败（不影响推送结果）: ${e.message}`));
+    say(C.warn(`   ⚠️ raw 检查失败: ${e.message}`));
   }
 }
 
