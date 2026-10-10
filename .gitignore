@@ -1,0 +1,5 @@
+# backups created by add-prompt.mjs
+*.bak
+
+# test leftovers
+_test_*.txt
