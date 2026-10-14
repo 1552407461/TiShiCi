@@ -141,5 +141,25 @@
     "createdAt": "2026-10-10",
     "imageMode": "generate",
     "imageModel": "gpt-image-2"
+  },
+  {
+    "id": "tishici:d2be9b922fd2bda1",
+    "sourceId": "tishici",
+    "title": "光线类提示词合集（12 条）",
+    "prompt": "生图光线类提示词合集（12 条），按需挑选、可自由组合。英文可直接拼进生图提示词，括号内为中文释义。\n\ncinematic lighting（电影级光线）\nlens flare（镜头光晕）\nbloom（泛光）\nsoft lighting（柔和的光线）\ndramatic lighting（对比比较强的光线，与 soft lighting 效果相反）\nchiaroscuro（明暗对比法）\nvolumetric lighting（体积光／丁达尔光）\nhigh contrast（高对比度）\nray tracing（光线追踪）\nbeautiful detailed lighting（唯美细节光照）\nperfect lighting（完美光照）\nlight particles（光线粒子）\n\n常用组合示例：\ncinematic lighting, volumetric lighting, soft lighting, light particles",
+    "description": "生图光线类英文提示词合集：电影级光线、镜头光晕、泛光、体积光、明暗对比法等 12 条，附中文释义与常用组合。",
+    "coverUrl": "",
+    "referenceImageUrls": [],
+    "tags": [
+      "光线",
+      "光影",
+      "照明",
+      "合集"
+    ],
+    "author": "",
+    "sourceUrl": "https://github.com/1552407461/TiShiCi",
+    "createdAt": "2026-10-14",
+    "imageMode": "generate",
+    "imageModel": "gpt-image-2"
   }
 ]
